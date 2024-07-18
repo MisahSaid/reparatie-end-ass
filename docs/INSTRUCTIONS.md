@@ -1,7 +1,7 @@
 
-# UML Diagram
+# Data Flow Diagram
 
-Schets een UML diagram van een server-side gerenderde website. 
+Schets een Data Flow Diagram van een server-side gerenderde website. 
 
 ## Context
 
@@ -16,7 +16,7 @@ Deze deeltaak hoort bij de leertaak:
 
 ## Doel van deze opdracht
 
-Leren hoe je een UML Diagram kan tekenen van je Node-code om data te laden (GET) en/of te posten (POST) en te renderen naar HTML (EJS).
+Leren hoe je een Data Flow Diagram kan tekenen van je Node-code om data te laden (GET) en/of te posten (POST) en te renderen naar HTML (EJS).
 
 
 
