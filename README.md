@@ -3,6 +3,7 @@
 
 
 ## Beschrijving
+Ik heb een website gebouwd, hou ingedachte dat het project niet af is. Het doel van deze website is dat je doelen kunt bijhouden, met de gedachte als motivatie afneemt je discipline behoudt. 
 
 ### Instalatie 
 Ik heb voor dit project Node en JSON gebruikt. Hoe begin je dan dit project?
