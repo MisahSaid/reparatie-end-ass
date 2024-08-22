@@ -58,3 +58,19 @@ div{
     flex-direction: column;
     gap: 1em;
 }
+
+
+/* form stlying */
+input{
+    border: none;
+    background-color: #F3F3F3;
+    border-radius:.5em;
+    padding: 1em;
+}
+
+.submit{
+    margin-top: 2em;
+    background-color: transparent;
+    font-family: 'Bethany-Elingston', sans-serif;
+    font-size: 22px;
+}
