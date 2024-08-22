@@ -1,0 +1,40 @@
+h1{
+    font-family: 'Poppins-Regular', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 2.5em;
+}
+
+main{
+    margin: 1em;
+}
+
+h2{
+    font-family: 'Bethany-Elingston', sans-serif;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.datum{
+    font-size: 10px;
+}
+   
+p{
+    font-size: 1em;
+}
+
+
+div{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    gap: .5em;
+    justify-content: left;
+
+    & img{
+        max-width: 21;
+        max-height: 21;
+        padding-top: .5em;
+    }
+}

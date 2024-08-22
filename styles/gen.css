@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'griffiths';
+    src: url('/fonts/griffiths.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Bethany-Elingston';
+    src: url('/fonts/bethany/BethanyElingston.otf') format('opentype');
+}
+
+body{
+    font-family: 'poppins-regular', sans-serif;
+}

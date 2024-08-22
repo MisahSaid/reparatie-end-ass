@@ -1,0 +1,52 @@
+body{
+    background-image: url('/assets/achtergrond-glowpath.png');
+    color: white;
+    text-align: center;
+    margin: 1em;
+}
+
+main{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5em;
+}
+
+h1{
+    font-family: 'Poppins-Regular', sans-serif;
+    font-size: 18px;
+}
+
+h2{
+    font-family: 'griffiths', sans-serif;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+span{
+    font-family:'Bethany-Elingston', sans-serif ;
+}
+
+a{
+    & button{
+        font-family:  'griffiths', sans-serif ;
+        background-color: white;
+        padding: 1em;
+        padding-left: 3em;
+        padding-right: 3em;
+        border-radius: 2em;
+        font-size: 18px;
+        text-decoration: none;
+        margin-top: .5em;
+
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+    }
+}
+
+
+
