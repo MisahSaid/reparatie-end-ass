@@ -38,3 +38,23 @@ div{
         padding-top: .5em;
     }
 }
+
+.cover{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: .2em;
+}
+
+.cover img:nth-child(1) {
+    grid-area: 1/1/3/2;
+    max-height: 70vw;
+    height: 100%;
+    /* width: 100%; */
+}
+
+.listform{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

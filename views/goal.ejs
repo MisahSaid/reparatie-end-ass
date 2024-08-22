@@ -10,6 +10,7 @@
     <header>
         <% goals.forEach(function(goals) { %>
             <h1>GLOWPATH</h1>
+            <!-- waarom geen "fdnd-acency.....", omdat de data al een link bevat dus basis URL niet nodig -->
             <a href="<%= goals.link %>">Bekijk de Pinterest-pagina</a>
             <!-- cover -->
             <div class="cover">
@@ -28,12 +29,23 @@
                 <p class="datum"><%= goals.datum %></p>
             </div>
 
-            <form action="">
-                <p><%= goals.antwoord1 %></p>
-                <p><%= goals.antwoord2 %></p>
-                <p><%= goals.antwoord3 %></p>
-                <p><%= goals.antwoord4 %></p>
-                <p><%= goals.antwoord5 %></p>    
+            <form action="" method="post" class="listform">
+                <label><%= goals.antwoord1 %></label>
+                <input type="text" name="" id="">
+                <br>
+                <label><%= goals.antwoord2 %></label>
+                <input type="text" name="" id="">
+                <br>
+                <label><%= goals.antwoord3 %></label>
+                <input type="text" name="" id="">
+                <br>
+                <label><%= goals.antwoord4 %></label>
+                <input type="text" name="" id="">
+                <br>
+                <label><%= goals.antwoord5 %></label>  
+                <input type="text" name="" id="">
+  
+                <input type="submit">
             </form>
         <% }) %>
 
