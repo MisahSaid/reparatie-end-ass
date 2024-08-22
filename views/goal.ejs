@@ -8,7 +8,16 @@
 </head>
 <body>
     <header>
-        <h1>GLOWPATH</h1>
+        <% goals.forEach(function(goals) { %>
+            <h1>GLOWPATH</h1>
+            <a href="<%= goals.link %>">Bekijk de Pinterest-pagina</a>
+            <!-- cover -->
+            <div class="cover">
+                <img src="https://fdnd-agency.directus.app/assets/<%= goals.foto1 %>" alt="afbeelding">
+                <img src="https://fdnd-agency.directus.app/assets/<%= goals.foto2 %>" alt="afbeelding">
+                <img src="https://fdnd-agency.directus.app/assets/<%= goals.foto3 %>" alt="afbeelding">
+            </div>
+        <% }) %>
     </header>
 
     <main>
