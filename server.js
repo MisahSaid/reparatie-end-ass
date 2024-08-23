@@ -95,25 +95,27 @@ app.get('/form', function(request, response) {
 
 app.post('/newgoal', function (request, response) {
   const newGoal = {
-    title: request.body.title
+    title: request.body.title // Make sure this matches the expected field in your Directus collection
   };
 
-  console.log('Received new goal:', newGoal); // Log the received goal
-
-  fetch(apiUrl, {
+  fetch('https://fdnd-agency.directus.app/items/misah_goals', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      // If the API requires authentication, include the authorization header
+      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
     },
     body: JSON.stringify(newGoal)
   })
   .then(res => {
-    console.log('API response status:', res.status);
+    if (!res.ok) {
+      throw new Error('Network response was not ok ' + res.statusText);
+    }
     return res.json();
   })
   .then(data => {
-    console.log('API response data:', data); // Log the data returned by the API
-    response.redirect('/newgoal'); 
+    console.log('Success:', data); // Log the successful API response
+    response.redirect('/newgoal'); // Redirect to the /newgoal page to show the updated list
   })
   .catch(error => {
     console.error('Error:', error);
