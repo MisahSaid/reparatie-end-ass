@@ -68,6 +68,17 @@ app.get('/goal', function(request, response) {
     });
 });
 
+app.get('/NewGoal', function(request, response) {
+  fetchJson('https://fdnd-agency.directus.app/items/misah_goals')
+    .then((goalsDataUitDeAPI) => {
+      response.render('NewGoal', {goals: goalsDataUitDeAPI.data});
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      response.status(500).send('Error fetching data');
+    });
+});
+
 
 
 // post route
