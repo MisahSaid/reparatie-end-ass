@@ -1,20 +1,20 @@
 <form method="post" class="listform">
-    <% goals.forEach(function(goals) { %>
-        <label for="answer1"><%= goals.antwoord1 %></label>
+    <% if (goals.length > 0 && goals[0].antwoord1) { %> <!-- Controleer of het eerste item niet leeg is -->
+        <label for="answer1"><%= goals[0].antwoord1 %></label>
         <input type="text" id="answer1" placeholder="[your answer ...]">
         <br>
-        <label for="answer2"><%= goals.antwoord2 %></label>
+        <label for="answer2"><%= goals[0].antwoord2 %></label>
         <input type="text" id="answer2" placeholder="[your answer ...]">
         <br>
-        <label for="answer3"><%= goals.antwoord3 %></label>
+        <label for="answer3"><%= goals[0].antwoord3 %></label>
         <input type="text" id="answer3" placeholder="[your answer ...]">
         <br>
-        <label for="answer4"><%= goals.antwoord4 %></label>
+        <label for="answer4"><%= goals[0].antwoord4 %></label>
         <input type="text" id="answer4" placeholder="[your answer ...]">
         <br>
-        <label for="answer5"><%= goals.antwoord5 %></label>  
+        <label for="answer5"><%= goals[0].antwoord5 %></label>  
         <input type="text" id="answer5" placeholder="[your answer ...]">
 
         <input class="submitbutton" type="submit" value="SAVE">
-    <% }) %>
+    <% } %>
 </form>

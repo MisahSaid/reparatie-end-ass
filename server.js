@@ -91,13 +91,34 @@ app.get('/form', function(request, response) {
 });
 
 
-// post route
-// app.post('/settings', function (request, response){
-//   console.log(request.body.thema) 
 
-//   theme = request.body.thema 
-//   response.redirect(303, '/settings')
-// })
+// // 1.) Form maken + correct invullen
+// app.post('/newgoal', function (request, response) {
+//   const newGoal = {
+//     title: request.body.title
+//   };
+
+//   // 2.) Post-Route aanmaken in Express (formulier verwerken)
+//   fetch(apiUrl, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(newGoal)
+//   })
+//   .then(res => res.json())
+//   .then(data => {
+//     // console.log('Success:', data);
+//     // 3.) Post-verzoek versturen naar de api om de nieuwe goal op te slaan. 
+//     response.redirect('/newgoal'); 
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//     response.status(500).send('Error saving goal');
+//   });
+// });
+
+
 
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op

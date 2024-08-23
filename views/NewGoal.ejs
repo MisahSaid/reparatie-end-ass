@@ -15,31 +15,30 @@
     </header>
 
     <main>
-        <% goals.forEach(function(goals) { %>
-            <div class="cover">
-                <img id="one" src="/assets/addnewpicBig.png" alt="add a picture">
-                <img id="two" src="/assets/addpicSmall.png" alt="add a picture">
-                <img id="three" src="/assets/addpicSmall.png" alt="add a picture">
-            </div>
+        <section class="cover">
+            <img id="one" src="/assets/addnewpicBig.png" alt="add a picture">
+            <img id="two" src="/assets/addpicSmall.png" alt="add a picture">
+            <img id="three" src="/assets/addpicSmall.png" alt="add a picture">
+        </section>
 
-            <!-- starting form, making a new goal -->
-            <form action="/newgoal" method="post" id="titelnewgoal">
-                <label id="nonvisable" for="title">Goal Name:</label>
-                <input type="text" id="title" placeholder="[give your new goal a name..]">
+        <form action="/newgoal" method="post" id="titelnewgoal">
+            <label id="nonvisable" for="title">Goal Name:</label>
+            <input type="text" id="title" name="title" placeholder="[give your new goal a name..]">
+            <input type="submit" value="SAVE">
+        </form>
 
-                <input type="submit" value="SAVE">
-            </form>
-
-            <div class="pf">
-                <img src="/assets/profilepic.png" alt="profielfoto">
+        <section class="pf">
+            <img src="/assets/profilepic.png" alt="profielfoto">
+            <% goals.forEach(function(goals) { %>
                 <p class="datum"><%= goals.datum %></p>
-            </div>
+            <% }) %>
+        </section>
 
-            <!-- form inladen -->
-            
-            <div class="form"><%- include('./partials/form') %></div>
-            
-        <% }) %>
+        <section><%- include('./partials/form') %></section>
+
+        <!-- checking lengte van de array, kijken wat het probleem was van het meerdere keren weergeven form -->
+        <!-- <pre><%= JSON.stringify(goals, null, 2) %></pre> -->
+
     </main>
 </body>
 </html>
