@@ -2,15 +2,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/gen.css">
+    <link rel="stylesheet" href="/styles/gen.css">
+    <link rel="stylesheet" href="/styles/newgoal.css">
     <title>GlowPath
     </title>
 </head>
 <body>
-    <header>GLOWPATH</header>
+    <header>
+        <h1>GLOWPATH</h1>
+    </header>
 
     <main>
-        
+        <div class="cover">
+            <img id="one" src="/assets/addnewpicBig.png" alt="add a picture">
+            <img id="two" src="/assets/addpicSmall.png" alt="add a picture">
+            <img id="three" src="/assets/addpicSmall.png" alt="add a picture">
+        </div>
+
+        <!-- starting form, making a new goal -->
+        <form action="post">
+            <label for=""></label>
+            <input type="text" name="" id="title" placeholder="[give your new goal a name..]">
+
+            <div class="pf">
+                <img src="/assets/profilepic.png" alt="profielfoto">
+                <p class="datum"><%= goals.datum %></p>
+            </div>
+            
+        </form>
     </main>
 </body>
 </html>

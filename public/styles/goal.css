@@ -25,29 +25,6 @@ p{
     font-size: 1em;
 }
 
-
-.pf{
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    gap: .5em;
-    justify-content: left;
-
-    & img{
-        max-width: 21;
-        max-height: 21;
-        padding-top: .5em;
-    }
-}
-
-.cover{
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: .2em;
-    margin: 0;
-}
-
 .cover a{
     grid-area: 1/1/3/2;
     position: absolute;
