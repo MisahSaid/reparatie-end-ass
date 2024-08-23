@@ -68,10 +68,10 @@ app.get('/goal', function(request, response) {
     });
 });
 
-app.get('/NewGoal', function(request, response) {
+app.get('/newgoal', function(request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/misah_goals')
     .then((goalsDataUitDeAPI) => {
-      response.render('NewGoal', {goals: goalsDataUitDeAPI.data});
+      response.render('newgoal', {goals: goalsDataUitDeAPI.data});
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -92,31 +92,34 @@ app.get('/form', function(request, response) {
 
 
 
-// // 1.) Form maken + correct invullen
-// app.post('/newgoal', function (request, response) {
-//   const newGoal = {
-//     title: request.body.title
-//   };
+// POST route to handle form submission
+app.post('/newgoal', function (request, response) {
+  const newGoal = {
+    title: request.body.title
+  };
 
-//   // 2.) Post-Route aanmaken in Express (formulier verwerken)
-//   fetch(apiUrl, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(newGoal)
-//   })
-//   .then(res => res.json())
-//   .then(data => {
-//     // console.log('Success:', data);
-//     // 3.) Post-verzoek versturen naar de api om de nieuwe goal op te slaan. 
-//     response.redirect('/newgoal'); 
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//     response.status(500).send('Error saving goal');
-//   });
-// });
+  const apiUrl = 'https://fdnd-agency.directus.app/items/misah_goals'; // Ensure apiUrl is defined and correct
+
+  // Send POST request to API
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newGoal)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('Success:', data);
+    // Redirect to the page showing goals after saving the new goal
+    response.redirect('/NewGoal'); 
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    // Render an error page or send a meaningful response
+    response.status(500).send('Error saving goal');
+  });
+});
 
 
 
