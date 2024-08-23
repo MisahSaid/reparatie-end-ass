@@ -98,7 +98,8 @@ app.post('/newgoal', function (request, response) {
     title: request.body.title
   };
 
-  // Send POST request to API to save the new goal
+  console.log('Received new goal:', newGoal); // Log the received goal
+
   fetch(apiUrl, {
     method: 'POST',
     headers: {
@@ -106,19 +107,19 @@ app.post('/newgoal', function (request, response) {
     },
     body: JSON.stringify(newGoal)
   })
-  .then(res => res.json())
+  .then(res => {
+    console.log('API response status:', res.status);
+    return res.json();
+  })
   .then(data => {
-    console.log('Success:', data);
-    // Redirect to the page showing goals after saving the new goal
+    console.log('API response data:', data); // Log the data returned by the API
     response.redirect('/newgoal'); 
   })
   .catch(error => {
     console.error('Error:', error);
-    // Render an error page or send a meaningful response
     response.status(500).send('Error saving goal');
   });
 });
-
 
 
 

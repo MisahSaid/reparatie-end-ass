@@ -26,16 +26,16 @@
             <input type="submit" value="SAVE">
         </form>
 
-        <section class="pf">
-            <img src="/assets/profilepic.png" alt="profielfoto">
-            <% if (goals && goals.length > 0) { %>
+        <% if (goals && goals.length > 0) { %>
+            <section class="pf">
+                <img src="/assets/profilepic.png" alt="profielfoto">
                 <% goals.forEach(function(goal) { %>
                     <p class="datum"><%= goal.title %></p>
                 <% }) %>
-            <% } else { %>
-                <p>No goals found.</p>
-            <% } %>
-        </section>
+            </section>
+        <% } else { %>
+            <p>No goals found.</p>
+        <% } %>
 
         <!-- Include other parts if necessary -->
         <section><%- include('./partials/form') %></section>
