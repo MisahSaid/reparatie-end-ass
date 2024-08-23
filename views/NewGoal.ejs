@@ -23,21 +23,22 @@
             </div>
 
             <!-- starting form, making a new goal -->
-            <form action="post">
-                <label for="title">Goal Name:</label>
+            <form action="/newgoal" method="post" id="titelnewgoal">
+                <label id="nonvisable" for="title">Goal Name:</label>
                 <input type="text" id="title" placeholder="[give your new goal a name..]">
 
                 <input type="submit" value="SAVE">
             </form>
 
+            <div class="pf">
+                <img src="/assets/profilepic.png" alt="profielfoto">
+                <p class="datum"><%= goals.datum %></p>
+            </div>
 
-                <div class="pf">
-                    <img src="/assets/profilepic.png" alt="profielfoto">
-                    <p class="datum"><%= goals.datum %></p>
-                </div>
-
-                <%- include('./partials/form') %>
-            </form>
+            <!-- form inladen -->
+            
+            <div class="form"><%- include('./partials/form') %></div>
+            
         <% }) %>
     </main>
 </body>

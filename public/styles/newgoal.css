@@ -32,3 +32,64 @@ h1{
     min-height: 93;
     object-fit: cover;
 }
+
+input{
+    border: none;
+    background-color: #F3F3F3;
+    border-radius:.5em;
+    padding: 1em;
+}
+
+.listform{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.submitbutton{
+    margin-top: 2em;
+    background-color: transparent;
+    font-family: 'Bethany-Elingston', sans-serif;
+    font-size: 22px;
+}
+
+.title{
+    font-family: 'Bethany-Elingston', sans-serif;
+    
+}
+
+#nonvisable{
+    position: absolute;
+    margin: -1;
+    overflow: hidden;
+    white-space: nowrap;
+    color: transparent;
+} 
+
+#title{
+    width: 70vw;
+    background-color: transparent;
+    font-family: 'Bethany-Elingston', sans-serif;
+    font-size: 28px;
+    text-align: left;
+    word-wrap: break-word; /* Allow breaking of long words */
+    overflow-wrap: break-word; 
+    flex-wrap: wrap;
+
+    border-radius: 0;
+
+    padding-left: 0;
+    color: black;
+}
+
+#title::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Placeholder color for better visibility */
+    text-overflow: clip; /* Ensures that overflowing text is clipped */
+    white-space: normal; /* Allows wrapping of placeholder text */
+    overflow-wrap: break-word; /* Ensure text wrapping in placeholder */
+}
+
+#titelnewgoal{
+    display: flex;
+    flex-direction: column;
+}
