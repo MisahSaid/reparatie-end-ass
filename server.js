@@ -69,15 +69,16 @@ app.get('/goal', function(request, response) {
 });
 
 app.get('/newgoal', function(request, response) {
-  fetchJson('https://fdnd-agency.directus.app/items/misah_goals')
+  fetchJson(apiUrl)
     .then((goalsDataUitDeAPI) => {
-      response.render('newgoal', {goals: goalsDataUitDeAPI.data});
+      response.render('newgoal', { goals: goalsDataUitDeAPI.data });
     })
     .catch(error => {
       console.error('Error fetching data:', error);
       response.status(500).send('Error fetching data');
     });
 });
+
 
 app.get('/form', function(request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/misah_goals')
@@ -92,15 +93,12 @@ app.get('/form', function(request, response) {
 
 
 
-// POST route to handle form submission
 app.post('/newgoal', function (request, response) {
   const newGoal = {
     title: request.body.title
   };
 
-  const apiUrl = 'https://fdnd-agency.directus.app/items/misah_goals'; // Ensure apiUrl is defined and correct
-
-  // Send POST request to API
+  // Send POST request to API to save the new goal
   fetch(apiUrl, {
     method: 'POST',
     headers: {
@@ -112,7 +110,7 @@ app.post('/newgoal', function (request, response) {
   .then(data => {
     console.log('Success:', data);
     // Redirect to the page showing goals after saving the new goal
-    response.redirect('/NewGoal'); 
+    response.redirect('/newgoal'); 
   })
   .catch(error => {
     console.error('Error:', error);

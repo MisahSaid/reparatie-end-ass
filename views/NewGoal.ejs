@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/gen.css">
     <link rel="stylesheet" href="/styles/newgoal.css">
-    <title>GlowPath
-    </title>
+    <title>GlowPath</title>
 </head>
 
 <body>
@@ -23,22 +22,23 @@
 
         <form action="/newgoal" method="post" id="titelnewgoal">
             <label id="nonvisable" for="title">Goal Name:</label>
-            <input type="text" id="title" name="title" placeholder="[give your new goal a name..]">
+            <input type="text" id="title" name="title" placeholder="[give your new goal a name..]" required>
             <input type="submit" value="SAVE">
         </form>
 
         <section class="pf">
             <img src="/assets/profilepic.png" alt="profielfoto">
-            <% goals.forEach(function(goals) { %>
-                <p class="datum"><%= goals.datum %></p>
-            <% }) %>
+            <% if (goals && goals.length > 0) { %>
+                <% goals.forEach(function(goal) { %>
+                    <p class="datum"><%= goal.title %></p>
+                <% }) %>
+            <% } else { %>
+                <p>No goals found.</p>
+            <% } %>
         </section>
 
+        <!-- Include other parts if necessary -->
         <section><%- include('./partials/form') %></section>
-
-        <!-- checking lengte van de array, kijken wat het probleem was van het meerdere keren weergeven form -->
-        <!-- <pre><%= JSON.stringify(goals, null, 2) %></pre> -->
-
     </main>
 </body>
 </html>
