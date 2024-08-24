@@ -8,48 +8,53 @@
 </head>
 <body>
     <header>
-            <h1>GLOWPATH</h1>
+        <h1>GLOWPATH</h1>
     </header>
 
     <main>
-        <% goals.forEach(function(goals) { %>
-            <div class="cover">
-                <!-- cover -->
-                <!-- waarom geen "fdnd-acency.....", omdat de data al een link bevat dus basis URL niet nodig -->
-                <a href="<%= goals.link %>">Bekijk de Pinterest-pagina</a>
-                <img class="A" src="https://fdnd-agency.directus.app/assets/<%= goals.foto1 %>" alt="afbeelding">
-                <img class="B" src="https://fdnd-agency.directus.app/assets/<%= goals.foto2 %>" alt="afbeelding">
-                <img class="C" src="https://fdnd-agency.directus.app/assets/<%= goals.foto3 %>" alt="afbeelding">
-            </div>
-            
-        
-            <h2><%= goals.titel %></h2>
-            <div class="pf">
-                <img src="/assets/profilepic.png" alt="profielfoto">
-                <p class="datum"><%= goals.datum %></p>
-            </div>
+        <% if (goals && goals.length > 0) { %>
+            <% goals.forEach(function(goal) { %>
+                <div class="cover">
+                    <a href="<%= goal.link %>">Bekijk de Pinterest-pagina</a>
+                    <img class="A" src="https://fdnd-agency.directus.app/assets/<%= goal.foto1 %>" alt="afbeelding">
+                    <img class="B" src="https://fdnd-agency.directus.app/assets/<%= goal.foto2 %>" alt="afbeelding">
+                    <img class="C" src="https://fdnd-agency.directus.app/assets/<%= goal.foto3 %>" alt="afbeelding">
+                </div>
 
-            <form action="" method="post" class="listform">
-                <label><%= goals.antwoord1 %></label>
-                <input type="text" name="" id="" placeholder="[your answer ...]">
-                <br>
-                <label><%= goals.antwoord2 %></label>
-                <input type="text" name="" id="" placeholder="[your answer ...]">
-                <br>
-                <label><%= goals.antwoord3 %></label>
-                <input type="text" name="" id="" placeholder="[your answer ...]">
-                <br>
-                <label><%= goals.antwoord4 %></label>
-                <input type="text" name="" id="" placeholder="[your answer ...]">
-                <br>
-                <label><%= goals.antwoord5 %></label>  
-                <input type="text" name="" id="" placeholder="[your answer ...]">
-  
-                <input type="submit" class="submit" value="SAVE">
-            </form>
-        <% }) %>
+                <h2><%= goal.titel %></h2>
+                <div class="pf">
+                    <img src="/assets/profilepic.png" alt="profielfoto">
+                    <p class="datum"><%= goal.datum %></p>
+                </div>
 
+                <form method="post" class="listform">
+                    <% if (goal.antwoord1) { %>
+                        <label for="answer1"><%= goal.antwoord1 %></label>
+                        <input type="text" id="answer1" placeholder="[your answer ...]">
+                        <br>
+                        <label for="answer2"><%= goal.antwoord2 %></label>
+                        <input type="text" id="answer2" placeholder="[your answer ...]">
+                        <br>
+                        <label for="answer3"><%= goal.antwoord3 %></label>
+                        <input type="text" id="answer3" placeholder="[your answer ...]">
+                        <br>
+                        <label for="answer4"><%= goal.antwoord4 %></label>
+                        <input type="text" id="answer4" placeholder="[your answer ...]">
+                        <br>
+                        <label for="answer5"><%= goal.antwoord5 %></label>
+                        <input type="text" id="answer5" placeholder="[your answer ...]">
+                        <br>
+                        <input class="submitbutton" type="submit" value="SAVE">
+                    <% } %>
+                </form>
+            <% }); %>
+        <% } %>
 
+        <div class="loader"></div>
+
+        <div class="added">
+            <p>New goal added to your list!</p>
+        </div>
     </main>
 </body>
 </html>
