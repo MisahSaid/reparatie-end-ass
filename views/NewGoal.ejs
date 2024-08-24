@@ -22,7 +22,7 @@
 
         <form action="/newgoal" method="post" id="titelnewgoal">
             <label id="nonvisable" for="title">Goal Name:</label>
-            <input type="text" id="title" name="title" placeholder="[give your new goal a name..]" required>
+            <input type="text" id="title" name="titel" placeholder="[give your new goal a name..]" required>
             <input type="submit" value="SAVE">
         </form>
 
@@ -30,7 +30,7 @@
             <section class="pf">
                 <img src="/assets/profilepic.png" alt="profielfoto">
                 <% goals.forEach(function(goal) { %>
-                    <p class="datum"><%= goal.title %></p>
+                    <p class="datum"><%= goal.titel %></p>
                 <% }) %>
             </section>
         <% } else { %>

@@ -92,37 +92,33 @@ app.get('/form', function(request, response) {
 });
 
 
-
+// POST-----------------------------------------------------------
 app.post('/newgoal', function (request, response) {
   const newGoal = {
-    title: request.body.title // Make sure this matches the expected field in your Directus collection
+    titel: request.body.titel
   };
 
-  fetch('https://fdnd-agency.directus.app/items/misah_goals', {
+  fetch(apiUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      // If the API requires authentication, include the authorization header
-      // 'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(newGoal)
   })
-  .then(res => {
-    if (!res.ok) {
-      throw new Error('Network response was not ok ' + res.statusText);
-    }
-    return res.json();
-  })
+  .then(apiResponse => apiResponse.json())
   .then(data => {
-    console.log('Success:', data); // Log the successful API response
-    response.redirect('/newgoal'); // Redirect to the /newgoal page to show the updated list
+    // Fetch the latest goals after the new goal is saved
+    return fetchJson(apiUrl);
+  })
+  .then((goalsDataUitDeAPI) => {
+    // Render the page with the updated goals
+    response.render('newgoal', { goals: goalsDataUitDeAPI.data });
   })
   .catch(error => {
     console.error('Error:', error);
     response.status(500).send('Error saving goal');
   });
 });
-
 
 
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
