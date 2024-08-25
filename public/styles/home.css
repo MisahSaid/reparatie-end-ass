@@ -53,6 +53,9 @@ a{
     }
 }
 
+button:active{
+    background-color: #D9D9D9;
+}
 
 /* 3) CSS en Clientside scripting voor Usable and pleasurable */
 /* ANIMATIE typewriter */
