@@ -26,7 +26,17 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="./assets/allgaols.png" alt="">
+                    <picture>
+                        <!-- image formats -->
+                        <!-- gebruik de .avif als je dit type kent -->
+                        <source src="./assets/allgaols.avif" type="image/avif">
+
+                        <!-- gebruik de .webp als je dit type kent -->
+                        <source src="./assets/allgaols.webp" type="image/webp">
+
+                        <!-- als je beide types niet kent, of je weet niet wat <source> is, doe dan gewoon dit: -->
+                        <img src="./assets/allgaols.png" alt="foto cover van allgoal map">
+                    </picture>
                     <p>All Goals</p>
                 </a>
             </li>

@@ -1,5 +1,10 @@
 body{
-    background-image: url('/assets/achtergrond-glowpath.png');
+    background-image: url('/assets/achtergrond-glowpath.png'); 
+    background-image: image-set(
+        url('/assets/achtergrond-glowpath.avif') type('image/avif'),
+        url('/assets/achtergrond-glowpath.webp') type('image/webp')
+    );
+
     color: white;
     text-align: center;
     margin: 1em;
