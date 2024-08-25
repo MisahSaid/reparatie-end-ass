@@ -130,6 +130,8 @@ app.post('/newgoal', function (request, response) {
 });
 
 
+
+
 // Start express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
