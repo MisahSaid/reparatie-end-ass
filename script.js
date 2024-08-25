@@ -6,3 +6,16 @@ setTimeout(() => {
     }
   }, 15000);
   
+
+// ADDED, Positive feedback after submit ------------------------------------------
+  document.getElementById('titelnewgoal').addEventListener('submit', function(event) {
+    event.preventDefault();  // Stop de standaard formulierverwerking
+
+    // Simuleer een succesvolle form submission door de .added class zichtbaar te maken
+    document.querySelector('.added').style.display = 'block';
+
+    // Simuleer het indienen van het formulier met een vertraging
+    setTimeout(() => {
+        event.target.submit(); // Nu het formulier echt indienen
+    }, 500); // Wacht 500ms voordat het formulier wordt ingediend
+});

@@ -93,3 +93,13 @@ input{
     display: flex;
     flex-direction: column;
 }
+
+.added{
+    display: none;
+
+    background-color: #82DD8A;
+    padding: .5em;
+    border-radius: 2em;
+
+    text-align: center;
+}
