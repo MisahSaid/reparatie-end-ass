@@ -93,11 +93,13 @@ app.get('/form', function(request, response) {
 
 
 // POST-----------------------------------------------------------
+// 1. Je verzamelt het nieuwe doel uit het formulier (newGoal).
 app.post('/newgoal', function (request, response) {
   const newGoal = {
     titel: request.body.titel
   };
 
+  // 2. Je stuurt dit doel naar de API om op te slaan.
   fetch(apiUrl, {
     method: 'POST',
     headers: {
@@ -105,15 +107,22 @@ app.post('/newgoal', function (request, response) {
     },
     body: JSON.stringify(newGoal)
   })
+
+  // 3. Afhandelen van het API-antwoord:.
   .then(apiResponse => apiResponse.json())
+
+  // 4. Nieuwste doelen ophalen.
   .then(data => {
     // Fetch the latest goals after the new goal is saved
     return fetchJson(apiUrl);
   })
+
+  // 5. Rendering van de bijgewerkte doelen.
   .then((goalsDataUitDeAPI) => {
     // Render the page with the updated goals
     response.render('newgoal', { goals: goalsDataUitDeAPI.data });
   })
+  // 6.Eventuele fouten worden afgevangen en netjes afgehandeld.
   .catch(error => {
     console.error('Error:', error);
     response.status(500).send('Error saving goal');
