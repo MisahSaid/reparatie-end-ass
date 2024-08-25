@@ -28,7 +28,7 @@
                     <p class="datum"><%= goal.datum %></p>
                 </div>
 
-                <form method="post" class="listform">
+                <form action="/newgoal" method="post" class="listform" id="titelnewgoal">
                     <% if (goal.antwoord1) { %>
                         <label for="answer1"><%= goal.antwoord1 %></label>
                         <input type="text" id="answer1" placeholder="[your answer ...]">
