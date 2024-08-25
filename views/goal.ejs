@@ -14,12 +14,13 @@
     <main>
         <% if (goals && goals.length > 0) { %>
             <% goals.forEach(function(goal) { %>
-                <div class="cover">
+                <section class="cover">
+                    <!-- waarom geen "fdnd-agency.....", omdat de data al een link bevat dus basis URL niet nodig -->
                     <a href="<%= goal.link %>">Bekijk de Pinterest-pagina</a>
                     <img class="A" src="https://fdnd-agency.directus.app/assets/<%= goal.foto1 %>" alt="afbeelding">
                     <img class="B" src="https://fdnd-agency.directus.app/assets/<%= goal.foto2 %>" alt="afbeelding">
                     <img class="C" src="https://fdnd-agency.directus.app/assets/<%= goal.foto3 %>" alt="afbeelding">
-                </div>
+                </section>
 
                 <h2><%= goal.titel %></h2>
                 <div class="pf">
